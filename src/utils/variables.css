@@ -1,0 +1,33 @@
+:root {
+	/* Основные цвета */
+	--color-body: #202020;
+	--color-main: #073042;
+
+	--color-white: #FFFFFF;
+	--color-green: #3DDC84;
+	--color-black: #000000;
+	--сolor-black22: #222;
+
+	--color-redbutton: #EE3465;
+	--color-bluebutton: #4285F4;
+
+	--color-grey27: #272727;
+	--color-greyDA: #DADADA;
+	--color-grey30: #303030;
+	--color-grey8B: #8B8B8B;
+	--color-grey2F: #2F2F2F;
+	--color-grey42: #424242;
+	--color-greyE6: #E6E6E6;
+	--color-greyC2: #c2c2c2;
+	--color-greyF8: #f8f8f8;
+	--color-grey31: #313131;
+	--color-greyEB: #EBEBEB;
+	--color-greyC4: #C4C4C4;
+
+	/* Непрозрачность */
+	--opacity-links: 0.7;
+	--opacity-buttons: 0.8;
+
+	/* Плавность */
+	--opacity-smoothness: 0.3s ease-in-out;
+}

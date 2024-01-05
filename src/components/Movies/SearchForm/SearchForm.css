@@ -1,0 +1,137 @@
+.search-form {
+	padding-top: 60px;
+}
+
+.search-form__content {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	gap: 42px;
+}
+
+.search-form__input {
+	border-radius: 40px;
+	background: var(--color-grey2F);
+	border: none;
+	height: 46px;
+	padding-left: 22px;
+	color: var(--color-white);
+}
+
+.search-form__shortfilms {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 18px;
+	/* 128.571% */
+	border-bottom: 1px solid var(--color-grey42);
+	padding-bottom: 81px;
+}
+
+.search-form__button {
+	position: absolute;
+	background-image: url('../../../images/find.svg');
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 34px;
+	height: 34px;
+	border: none;
+	right: 7px;
+	top: 7px;
+}
+
+.search-form__shortfilms-input {
+	display: none;
+}
+
+.search-form__shortfilms-label {
+	margin: 0;
+	position: relative;
+	width: 36px;
+	height: 20px;
+	background-color: var(--color-greyEB);
+	border: none;
+	border-radius: 20px;
+	display: block;
+	transition: background-color 0.2s linear;
+}
+
+.search-form__shortfilms-label::after {
+	content: '';
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 6px;
+	transform: translateY(-50%);
+	background-color: var(--color-greyC4);
+	transition: all 0.2s linear;
+}
+
+.search-form__shortfilms-input:checked+.search-form__shortfilms-label::after {
+	left: 20px;
+	background-color: var(--color-white);
+}
+
+.search-form__shortfilms-input:checked+.search-form__shortfilms-label {
+	background-color: var(--color-green);
+}
+
+.search-form__shortfilms-title {
+	display: block;
+	margin: 0;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 18px;
+	/* 128.571% */
+	color: var(--color-white);
+}
+
+@media (max-width: 1200px) {
+	.search-form {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+@media (max-width: 768px) {
+	.search-form {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.search-form__shortfilms {
+		padding-bottom: 51px;
+	}
+}
+
+@media (max-width: 754px) {
+	.search-form {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+}
+
+@media (max-width: 560px) {
+	.search-form__input {
+		font-size: 11px;
+		line-height: 17px;
+		/* 154.545% */
+	}
+
+	.search-form__shortfilms {
+		padding-bottom: 50px;
+	}
+
+
+	.search-form__shortfilms-title {
+		font-size: 11px;
+	}
+}

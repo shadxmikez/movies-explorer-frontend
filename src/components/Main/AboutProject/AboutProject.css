@@ -1,0 +1,125 @@
+.about-project {
+	margin: 0 auto;
+	padding-top: 110px;
+	padding-bottom: 110px;
+}
+
+.about-project__title {
+	color: var(--color-white);
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.88px;
+	border-bottom: solid 1px var(--color-white);
+	padding-bottom: 23px;
+	margin: 0 auto;
+}
+
+.about-project__list {
+	display: grid;
+	grid-template: 1fr / repeat(2, 1fr);
+	gap: 40px;
+	margin: 0 0 110px;
+	padding: 0;
+	list-style: none;
+	color: var(--color-white);
+	margin: 70px 0 110px;
+}
+
+.about-project__subtitle {
+	margin: 0;
+	padding-bottom: 26px;
+	letter-spacing: -0.04em;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 1.2;
+}
+
+.about-project__description {
+	margin: 0;
+	font-size: 14px;
+	line-height: 1.43;
+}
+
+.about-project__weeks {
+	display: grid;
+	grid-template: 1fr / 20% 80%;
+}
+
+.about-project__weeks-container {
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 17px;
+	/* 121.429% */
+}
+
+.about-project__weeks-container:first-of-type>.about-project__weeks-title {
+	background-color: var(--color-green);
+	color: var(--color-black);
+}
+
+.about-project__weeks-title {
+	padding: 11px 10px;
+	text-align: center;
+	line-height: 13px;
+	background-color: var(--color-grey30);
+	color: var(--color-white);
+	font-weight: 400;
+}
+
+.about-project__weeks-subtitle {
+	line-height: 12px;
+	margin: 0;
+	padding-top: 10px;
+	text-align: center;
+	color: var(--color-grey8B);
+}
+
+@media (max-width: 768px) {
+	.about-project {
+		padding: 90px 50px;
+	}
+
+	.about-project__description {
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 18px;
+		/* 150% */
+	}
+
+	.about-project__weeks {
+		grid-template: 1fr / 35% 65%;
+	}
+}
+
+@media (max-width: 748px) {
+	.about-project {
+		padding: 70px 18px;
+	}
+
+	.about-project__list {
+		display: flex;
+		flex-direction: column;
+		gap: 56px;
+		list-style: none;
+		margin: 0;
+		padding: 60px 0;
+	}
+
+	.about-project__subtitle {
+		padding-bottom: 16px;
+		font-size: 18px;
+		letter-spacing: -0.72px;
+	}
+
+	.about-project__description {
+		font-size: 11px;
+		line-height: 16px;
+	}
+
+	.about-project__weeks-container {
+		font-size: 11px;
+	}
+}

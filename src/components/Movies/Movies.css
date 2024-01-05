@@ -1,0 +1,40 @@
+.movies {
+	max-width: 1140px;
+	width: 100%;
+}
+
+.movies__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	background-color: var(--color-grey2F);
+	color: var(--color-white);
+	border: none;
+	height: 36px;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin: 50px 0 70px;
+	position: relative;
+}
+
+.movies__button:hover {
+	opacity: var(--opacity-buttons);
+	transition: var(--opacity-smoothness);
+}
+
+@media (max-width: 1200px) {
+	.movies__button {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+
+@media (max-width: 750px) {
+	.movies__button {
+		padding: 0 30px 0;
+	}
+}

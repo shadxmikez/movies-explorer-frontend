@@ -1,0 +1,33 @@
+.navbar-open {
+	display: none;
+}
+
+@media (max-width: 1000px) {
+	.navbar-open {
+		display: flex;
+		min-width: 43px;
+		height: 47px;
+		padding: 0;
+		cursor: pointer;
+		background-image: url('../../../images/navbar.svg');
+		background-color: transparent;
+		background-repeat: no-repeat;
+		border: none;
+		background-position: 55% 100%;
+		background-size: 44px 44px;
+	}
+
+	.navbar-open_active {
+		display: none;
+	}
+
+	.navbar-open:hover {
+		opacity: 0.8;
+	}
+}
+
+@media (max-width: 768px) {
+	.navbar-open {
+		background-size: 40px 43px;
+	}
+}
