@@ -5,3 +5,5 @@
 API: [https://api.shadxmikez.nomoredomainsmonster.ru](https://api.shadxmikez.nomoredomainsmonster.ru)
 URL: [https://shadxmikez.nomoredomainsmonster.ru](https://shadxmikez.nomoredomainsmonster.ru)
 
+### По макету Dark-3
+
