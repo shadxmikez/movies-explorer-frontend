@@ -73,8 +73,6 @@
 
 	.techs__list {
 		padding: 83px 0 0;
-		grid-template-columns: repeat(2, 84px);
-		grid-template-rows: repeat(4, 57px);
 	}
 
 	.techs__description {
@@ -112,5 +110,22 @@
 
 	.techs__list {
 		padding: 50px 0 0;
+		grid-template-columns: repeat(2, 84px);
+		grid-template-rows: repeat(4, 57px);
+	}
+}
+
+@media (max-width: 320px) {
+	.techs {
+		padding: 70px 18px 70px;
+		background-color: var(--color-body);
+	}
+
+	.techs__title {
+		border-bottom: solid 1px var(--color-black);
+	}
+
+	.techs__subtitle {
+		padding: 50px 0 13px;
 	}
 }

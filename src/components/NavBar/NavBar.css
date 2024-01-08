@@ -36,7 +36,7 @@
 	line-height: normal;
 }
 
-.navbar_link-active {
+.navbar__link-active {
 	padding-bottom: 4px;
 	border-bottom: 2px solid var(--color-white);
 }

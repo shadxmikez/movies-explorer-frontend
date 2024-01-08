@@ -19,7 +19,7 @@ export default function SearchForm() {
 						type='checkbox'
 						className='search-form__shortfilms-input'
 					/>
-					<label htmlFor='search-form__shortfilms-input' className='search-form__shortfilms-label'></label>
+					<label htmlFor='search-form__shortfilms-input' className='search-form__shortfilms-label search-form__shortfilms-label-active'></label>
 					<label htmlFor='search-form__shortfilms-input' className='search-form__shortfilms-title'>Короткометражки</label>
 				</span>
 			</form>

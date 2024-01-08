@@ -7,7 +7,7 @@ export default function Auth(props) {
 	return (
 		<section className='auth'>
 			<Logo />
-			<h3 className='auth__title'>{props.heading}</h3>
+			<h1 className='auth__title'>{props.heading}</h1>
 			<Form onSubmit={props.onSubmit} name={props.name} path={props.path} auth={props.auth} buttonTxt={props.buttonTxt}>{props.children}</Form>
 			<div className='auth__content'>
 				<p className='auth__question'>{props.defaultText}</p>

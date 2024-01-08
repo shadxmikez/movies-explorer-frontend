@@ -13,7 +13,7 @@ function homePagePathname(pathname, isLoggedIn) {
 	return pathname === '/' && isLoggedIn;
 }
 
-const activeNavLink = (isActive, homePage) => `navigation__movies-nl ${homePage ? 'navigation__movies-nl_menu' : ''}${isActive ? 'navigation__movies-nl_active' : ''}`;
+const activeNavLink = (isActive, homePage) => `navigation__container-movies-nl ${homePage ? 'navigation__container-movies-nl_menu' : ''}${isActive ? 'navigation__container-movies-nl_active' : ''}`;
 
 export default function Navigation({ isLoggedIn }) {
 	const { pathname } = useLocation();
@@ -31,7 +31,7 @@ export default function Navigation({ isLoggedIn }) {
 							<li>
 								<NavLink to="/saved-movies" className={({ isActive }) => activeNavLink(isActive, homePagePathname(pathname, isLoggedIn))}>Сохранённые фильмы</NavLink>
 							</li>
-							<li className="navigation__list-item navigation__navbar-icon">
+							<li className="navigation__container-movies-item navigation__container-movies-icon">
 								<NavBarIcon />
 							</li>
 						</ul>

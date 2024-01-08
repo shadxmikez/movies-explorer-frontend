@@ -61,5 +61,4 @@ export default function Register({ onSubmit }) {
 			</Auth>
 		</main>
 	)
-
 }

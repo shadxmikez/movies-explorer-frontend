@@ -16,6 +16,7 @@
 	height: 46px;
 	padding-left: 22px;
 	color: var(--color-white);
+	font-size: 13px;
 }
 
 .search-form__shortfilms {
@@ -29,7 +30,7 @@
 	line-height: 18px;
 	/* 128.571% */
 	border-bottom: 1px solid var(--color-grey42);
-	padding-bottom: 81px;
+	padding-bottom: 67px;
 }
 
 .search-form__button {
@@ -43,6 +44,12 @@
 	border: none;
 	right: 7px;
 	top: 7px;
+	cursor: pointer;
+}
+
+.search-form__button:hover {
+	transition: var(--opacity-smoothness);
+	opacity: var(--opacity-buttons);
 }
 
 .search-form__shortfilms-input {
@@ -54,11 +61,12 @@
 	position: relative;
 	width: 36px;
 	height: 20px;
-	background-color: var(--color-greyEB);
 	border: none;
 	border-radius: 20px;
 	display: block;
 	transition: background-color 0.2s linear;
+	cursor: pointer;
+	background-color: var(--color-green);
 }
 
 .search-form__shortfilms-label::after {
@@ -68,19 +76,19 @@
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
-	left: 6px;
+	right: 2px;
 	transform: translateY(-50%);
-	background-color: var(--color-greyC4);
+	background-color: var(--color-white);
 	transition: all 0.2s linear;
 }
 
 .search-form__shortfilms-input:checked+.search-form__shortfilms-label::after {
-	left: 20px;
-	background-color: var(--color-white);
+	right: 20px;
+	background-color: var(--color-grey8B);
 }
 
 .search-form__shortfilms-input:checked+.search-form__shortfilms-label {
-	background-color: var(--color-green);
+	background-color: var(--color-grey30);
 }
 
 .search-form__shortfilms-title {
@@ -94,28 +102,13 @@
 	color: var(--color-white);
 }
 
-@media (max-width: 1200px) {
-	.search-form {
-		padding-left: 50px;
-		padding-right: 50px;
-	}
-}
-
 @media (max-width: 768px) {
 	.search-form {
-		padding-left: 30px;
-		padding-right: 30px;
+		padding: 73px 0 0;
 	}
 
 	.search-form__shortfilms {
 		padding-bottom: 51px;
-	}
-}
-
-@media (max-width: 754px) {
-	.search-form {
-		padding-left: 14px;
-		padding-right: 14px;
 	}
 }
 

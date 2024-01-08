@@ -4,4 +4,5 @@
 
 .page {
 	background-color: var(--color-body);
+	box-sizing: border-box;
 }

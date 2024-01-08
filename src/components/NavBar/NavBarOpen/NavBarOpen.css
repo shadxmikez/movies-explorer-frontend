@@ -5,16 +5,14 @@
 @media (max-width: 1000px) {
 	.navbar-open {
 		display: flex;
-		min-width: 43px;
-		height: 47px;
+		min-width: 44px;
+		height: 44px;
 		padding: 0;
 		cursor: pointer;
 		background-image: url('../../../images/navbar.svg');
 		background-color: transparent;
 		background-repeat: no-repeat;
 		border: none;
-		background-position: 55% 100%;
-		background-size: 44px 44px;
 	}
 
 	.navbar-open_active {
@@ -28,6 +26,13 @@
 
 @media (max-width: 768px) {
 	.navbar-open {
-		background-size: 40px 43px;
+		background-position: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.navbar-open {
+		width: 40px;
+		height: 43px;
 	}
 }

@@ -1,12 +1,17 @@
 import './MoviesCardList.css';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 function MoviesCardList({ listMovies, button }) {
 	const moviesImageUrl = 'https://api.nomoreparties.co/';
 
+	const { pathname } = useLocation();
+	const saveMovies = `movies-card-list main-content ${pathname === '/saved-movies' ? 'movies-card-list_size-padding' : ''
+		}`;
+
 	return (
-		<section className='movies-card-list main-content'>
+		<section className={saveMovies}>
 			<ul className="movies-card-list__movies">
 				{listMovies.map((card) => {
 					return (
