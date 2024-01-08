@@ -1,0 +1,38 @@
+.navbar-open {
+	display: none;
+}
+
+@media (max-width: 1000px) {
+	.navbar-open {
+		display: flex;
+		min-width: 44px;
+		height: 44px;
+		padding: 0;
+		cursor: pointer;
+		background-image: url('../../../images/navbar.svg');
+		background-color: transparent;
+		background-repeat: no-repeat;
+		border: none;
+	}
+
+	.navbar-open_active {
+		display: none;
+	}
+
+	.navbar-open:hover {
+		opacity: 0.8;
+	}
+}
+
+@media (max-width: 768px) {
+	.navbar-open {
+		background-position: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	.navbar-open {
+		width: 40px;
+		height: 43px;
+	}
+}

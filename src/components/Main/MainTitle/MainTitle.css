@@ -1,0 +1,19 @@
+.main-title {
+	color: var(--color-white);
+	font-size: 22px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.88px;
+	border-bottom: solid 1px var(--color-white);
+	padding-bottom: 23px;
+	margin: 0 auto;
+}
+
+@media (max-width:748px) {
+	.main-title {
+		font-size: 18px;
+		letter-spacing: -0.72px;
+		padding-bottom: 28px;
+	}
+}
