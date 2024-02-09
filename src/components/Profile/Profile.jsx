@@ -1,79 +1,160 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './Profile.css';
-import React from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Form from '../Auth/Form/Form';
+import { useValidateForm } from '../../hooks/useValidateForm';
+import CurrentUserContext from '../contexts/contexts';
+import {
+	OUT_ACCAUNT,
+	EDIT_PROFILE,
+	EMAIL_LABEL_TITLE,
+	NAME_LABEL_TITLE,
+	PROFILE_TITLE,
+	ROUTES
+} from '../../utils/constants';
 
+const { homePathname } = ROUTES;
 
-export default function Profile({ logout, onSave }) {
-	const [name, setName] = React.useState('Виталий');
-	const [email, setEmail] = React.useState('pochta@yandex.ru');
-	const [change, setChange] = React.useState(false);
+export default function Profile({
+	handleSignOut,
+	updateProfile,
+	messageState: [message, setMessage]
+}) {
+
+	const [change, setChange] = useState(false);
+	const currentUser = useContext(CurrentUserContext);
+	const { values,
+		errors,
+		isFormValid,
+		handleChange,
+		resetForm } = useValidateForm({
+			name: currentUser.name,
+			email: currentUser.email,
+		});
+
 	const navigate = useNavigate();
+	const isDataValidity = currentUser.name === values.name && currentUser.email === values.email;
 
-	const handleChange = () => setChange(true);
+	useEffect(() => {
+		if (currentUser) {
+			resetForm(currentUser, {}, true);
+		}
+	}, [currentUser]);
 
-	const handleUpdate = (evt) => {
-		evt.preventDefault();
-		onSave({ name, email });
-		setChange(false);
+	useEffect(() => {
+		setMessage({});
+	}, [isFormValid, setMessage]);
+
+	const handleEditProfileClick = () => {
+		setChange(true);
+		resetForm();
 	};
 
-	const handleLogout = (evt) => {
+	function handleSubmit(evt) {
 		evt.preventDefault();
-		logout();
-		navigate('/');
+		updateProfile(values);
 	}
+
+	const handleInputChange = (evt) => {
+		evt.preventDefault();
+		setMessage({});
+		handleChange(evt);
+	};
+
+	useEffect(() => {
+		setChange(false);
+	}, [currentUser.email, currentUser.name]);
+
+	const handleLogoutProfile = (evt) => {
+		evt.preventDefault();
+		handleSignOut();
+		navigate(homePathname);
+	};
 
 	return (
 		<main>
-			<section className='profile'>
-				<h1 className='profile__title'>Привет, {name}!</h1>
+			<section className='profile' id='profile' >
+				<h1 className='profile__title'>{PROFILE_TITLE}, {currentUser.name}!</h1>
 				<Form
 					path='profile'
+					auth='profile'
+					name='profile'
 					buttonTxt='Сохранить'
 					eding={change}
-					onSubmit={handleUpdate}
+					isValid={isFormValid && !isDataValidity}
+					handleSubmit={handleSubmit}
+					noValidate
 				>
 					<div className='profile__container'>
 						<label htmlFor='name' className='profile__label'>
-							<p className='profile__subtitle'>Имя</p>
+							<p className='profile__subtitle'>{NAME_LABEL_TITLE}</p>
 							<input
 								id='name'
 								name='name'
-								value={name}
+								value={values.name || ''}
 								type='text'
-								onChange={(evt) => setName(evt.target.value)}
-								className="profile__input"
+								onChange={handleInputChange}
+								minLength='2'
+								maxLength='30'
+								className='profile__input'
 								placeholder='Введите свое имя'
 								disabled={!change}
+								autoComplete={'' + Math.random()}
 								required
 							>
 							</input>
 						</label>
-						<label htmlFor="email" className="profile__label">
-							<p className='profile__subtitle'>E-mail</p>
+						<span className='profile__error'>
+							{!errors && message.isItSuccessfully
+								? message.showText
+								: errors.name}
+						</span>
+						<label htmlFor='email' className='profile__label'>
+							<p className='profile__subtitle'>{EMAIL_LABEL_TITLE}</p>
 							<input
 								id='email'
 								name='email'
 								type='email'
-								value={email}
-								onChange={(evt) => setEmail(evt.target.value)}
-								className="profile__input"
+								value={values.email || ''}
+								pattern='^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$'
+								onChange={handleInputChange}
+								className='profile__input'
 								placeholder='Введите почту'
+								minLength='2'
+								maxLength='50'
+								autoComplete={'' + Math.random()}
 								disabled={!change}
 								required
 							>
 							</input>
 						</label>
+						<span className='profile__error'>
+							{!errors && message.isItSuccessfully
+								? message.showText
+								: errors.email}
+						</span>
 					</div>
+					<span className='profile__error'>
+						{!errors && message.isItSuccessfully
+							? message.showText
+							: message.showText}
+					</span>
 				</Form>
 				{!change && (
 					<ul className='profile__list'>
 						<li>
-							<Link className='profile__link' onClick={handleChange}>Редактировать</Link>
+							<Link
+								className='profile__link'
+								type={'submit'}
+								onClick={handleEditProfileClick}
+							>
+								{EDIT_PROFILE}
+							</Link>
 						</li>
 						<li>
-							<Link className='profile__link profile__link-logout' onClick={handleLogout}>Выйти из аккаунта</Link>
+							<Link className='profile__link profile__link-logout'
+								onClick={handleLogoutProfile}>{OUT_ACCAUNT}</Link>
 						</li>
 					</ul>
 				)}

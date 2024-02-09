@@ -1,16 +1,40 @@
 import './Register.css';
 import Auth from '../Auth/Auth';
 import React from 'react';
+import { useValidateForm } from '../../hooks/useValidateForm';
+import {
+	EMAIL_LABEL_TITLE,
+	PASSWORD_LABEL_TITLE,
+	NAME_LABEL_TITLE,
+	ROUTES
+} from '../../utils/constants';
 
-export default function Register({ onSubmit }) {
-	const [userEmail, setUserEmail] = React.useState('pochta@yandex.ru');
-	const [userPassword, setUserPassword] = React.useState('12345');
-	const [userName, setUserName] = React.useState('Виталий');
+const { signinPathname } = ROUTES;
 
-	const handleSubmit = (evt) => {
+export default function Register({ onRegister }) {
+
+	const {
+		values,
+		errors,
+		isFormValid,
+		handleChange } = useValidateForm({
+			email: '',
+			password: '',
+			name: '',
+		})
+
+	function inputDataChange(evt) {
+		handleChange(evt);
+	}
+
+	function handleSubmit(evt) {
 		evt.preventDefault();
-		onSubmit({ userEmail, userPassword, userName });
-	};
+		onRegister({
+			name: values.name,
+			email: values.email,
+			password: values.password,
+		});
+	}
 
 	return (
 		<main className='register'>
@@ -21,43 +45,65 @@ export default function Register({ onSubmit }) {
 				auth='register'
 				buttonTxt='Зарегистрироваться'
 				defaultText='Уже зарегистрированы?'
-				link='/signin'
+				link={signinPathname}
 				linkTxt='Войти'
 				onSubmit={handleSubmit}
+				isValid={isFormValid}
 			>
-				<label className='register__label' htmlFor="name">Имя</label>
-				<input className='register__input'
+				<label className='register__label' htmlFor='name'>{NAME_LABEL_TITLE}</label>
+				<input className={`register__input ${!isFormValid && errors.name && 'register__input_invalid'}`}
 					id='name'
 					name='name'
 					type='text'
-					value={userName || ""}
-					onChange={e => setUserName(e.target.value)}
+					value={values.name || ''}
+					onChange={inputDataChange}
 					placeholder='Введите свое имя'
+					autoComplete={'' + Math.random()}
+					minLength='2'
+					maxLength='30'
 					required
 				/>
-				<span className="register__error"></span>
-				<label className='register__label' htmlFor="email">E-mail</label>
-				<input className='register__input'
+				<span
+					className={`register__error ${!isFormValid && errors.name ? 'register__error_active' : ''
+						}`}
+				>
+					{errors.name || ''}
+				</span>
+				<label className='register__label' htmlFor='email'>{EMAIL_LABEL_TITLE}</label>
+				<input className={`register__input ${!isFormValid && errors.email && 'register__input_invalid'}`}
 					id='email'
 					name='email'
 					type='email'
-					value={userEmail || ""}
-					onChange={e => setUserEmail(e.target.value)}
+					pattern='^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$'
+					value={values.email || ''}
+					onChange={inputDataChange}
 					placeholder='Введите свою почту'
+					autoComplete={'' + Math.random()}
 					required
 				/>
-				<span className="register__error"></span>
-				<label className='register__label' htmlFor="password">Пароль</label>
+				<span
+					className={`register__error ${!isFormValid && errors.email ? 'register__error_active' : ''
+						}`}
+				>
+					{errors.email || ''}
+				</span>
+				<label className='register__label' htmlFor='password'>{PASSWORD_LABEL_TITLE}</label>
 				<input className='register__input'
 					id='password'
 					name='password'
 					type='password'
-					value={userPassword || ""}
-					onChange={e => setUserPassword(e.target.value)}
+					value={values.password || ''}
+					onChange={inputDataChange}
 					placeholder='Придумайте пароль'
+					autoComplete={'' + Math.random()}
 					required
 				/>
-				<span className="register__error">Что-то пошло не так...</span>
+				<span
+					className={`register__error ${!isFormValid && errors.password ? 'register__error_active' : ''
+						}`}
+				>
+					{errors.password || ''}
+				</span>
 			</Auth>
 		</main>
 	)

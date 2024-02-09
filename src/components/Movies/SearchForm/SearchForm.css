@@ -66,7 +66,9 @@
 	display: block;
 	transition: background-color 0.2s linear;
 	cursor: pointer;
-	background-color: var(--color-green);
+	/*background-color: var(--color-green);*/
+	/*background-color: var(--color-grey8B);*/
+	background-color: var(--color-grey30)
 }
 
 .search-form__shortfilms-label::after {
@@ -76,19 +78,19 @@
 	border-radius: 50%;
 	position: absolute;
 	top: 50%;
-	right: 2px;
+	right: 18px;
 	transform: translateY(-50%);
-	background-color: var(--color-white);
+	background-color: var(--color-grey8B);
 	transition: all 0.2s linear;
 }
 
 .search-form__shortfilms-input:checked+.search-form__shortfilms-label::after {
-	right: 20px;
-	background-color: var(--color-grey8B);
+	right: 3px;
+	background-color: var(--color-white);
 }
 
 .search-form__shortfilms-input:checked+.search-form__shortfilms-label {
-	background-color: var(--color-grey30);
+	background-color: var(--color-green);
 }
 
 .search-form__shortfilms-title {

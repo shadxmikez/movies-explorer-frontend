@@ -82,7 +82,7 @@
 	background-image: url('../../../images/save4.svg');
 	display: flex;
 	background-repeat: no-repeat;
-	background-color: #222;
+	background-color: var(--сolor-black22);
 	width: 30px;
 	height: 30px;
 	border: none;

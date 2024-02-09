@@ -27,17 +27,40 @@
 	margin-bottom: 20px;
 }
 
-.login__input:last-of-type {
-	margin-bottom: 179px;
+
+.login__input_invalid {
+	color: var(--color-redbutton);
+	border-bottom: 1px solid var(--color-redbutton);
 }
+
+/*login__input:last-of-type {
+	margin-bottom: 179px;
+}*/
+
 
 .login__error {
 	color: var(--color-redbutton);
 	font-size: 10px;
 }
 
+.login__error:last-of-type {
+	padding-bottom: 157px;
+}
+
+.login__error_active {
+	overflow: hidden;
+	color: var(--color-redbutton);
+	font-size: 10px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.2;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	max-width: 256px;
+}
+
 @media (max-width: 320px) {
-	.login__input:last-of-type {
-		margin-bottom: 267px;
+	.login__error:last-of-type {
+		padding-bottom: 247px;
 	}
 }

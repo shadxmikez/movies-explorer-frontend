@@ -4,13 +4,23 @@ import Logo from './Logo/Logo';
 import Navigation from '../Navigation/Navigation';
 import NavBar from '../NavBar/NavBar';
 import NavBarOpen from '../NavBar/NavBarOpen/NavBarOpen';
+import { ROUTES } from '../../utils/constants';
 
+const {
+	profilePathname,
+	moviesPathname,
+	savedMoviesPathname } = ROUTES;
 
-export default function Header({ isLoggedIn, onOpenNavBar, onCloseNavBar, isNavBarOpen }) {
+export default function Header({
+	isLoggedIn,
+	onOpenNavBar,
+	onCloseNavBar,
+	isNavBarOpen
+}) {
 	const { pathname } = useLocation();
 
 	let header = 'header';
-	if (pathname === '/movies' || pathname === '/saved-movies' || pathname === '/profile') {
+	if (pathname === moviesPathname || pathname === savedMoviesPathname || pathname === profilePathname) {
 		header += ' header__movies';
 	}
 

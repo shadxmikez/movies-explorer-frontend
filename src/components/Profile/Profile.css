@@ -97,6 +97,22 @@
 	display: inline-block;
 }
 
+
+.profile__error {
+	color: var(--color-redbutton);
+	font-size: 10px;
+	font-weight: 500;
+	font-style: normal;
+	padding-top: 10px;
+	display: block;
+	padding-bottom: 10px;
+	margin-top: -20px;
+}
+
+.profile__error:last-of-type {
+	margin-top: -20px;
+}
+
 @media (max-width: 768px) {
 	.profile {
 		padding: 231px 0 269px;

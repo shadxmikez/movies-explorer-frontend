@@ -25,9 +25,8 @@
 	color: var(--color-white);
 }
 
-
 .footer__title::after {
-	content: "";
+	content: '';
 	display: block;
 	margin: 0 0 20px 30px;
 }
@@ -128,5 +127,4 @@
 	.portfolio__link::after {
 		line-height: 23px;
 	}
-
 }

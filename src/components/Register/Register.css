@@ -27,14 +27,45 @@
 	margin-bottom: 20px;
 }
 
+.register__input:focus {
+	letter-spacing: 0;
+	border-bottom: 1px solid var(--color-bluebutton);
+	font-size: 14px;
+	font-weight: 500;
+}
+
 .register__input:last-of-type {
-	margin-bottom: 10px;
-	color: var(--color-redbutton);
+	margin-bottom: 20px;
+	/*color: var(--color-redbutton)*/
+	;
 }
 
 .register__error {
 	color: var(--color-redbutton);
 	font-size: 10px;
+}
+
+.register__input_invalid {
+	color: var(--color-redbutton);
+	border-bottom: 1px solid var(--color-redbutton);
+}
+
+.register__input:invalid:focus {
+	border-bottom: 1px solid var(--color-redbutton);
+}
+
+.register__error_active {
+	overflow: hidden;
+	height: 24px;
+	margin-top: -10px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: var(--color-redbutton);
+	font-size: 10px;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1.2;
+	max-width: 200px;
 }
 
 .register__error:last-of-type {

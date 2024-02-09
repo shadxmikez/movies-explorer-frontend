@@ -30,6 +30,12 @@
 	transition: var(--opacity-smoothness);
 }
 
+.form__button_disabled {
+	cursor: not-allowed;
+	color: var(--color-black);
+	background-color: var(--color-greyF8);
+}
+
 @media (max-width: 748px) {
 	.form__button {
 		font-size: 12px;

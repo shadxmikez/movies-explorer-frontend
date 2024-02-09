@@ -1,28 +1,41 @@
 import './AboutProject.css';
 import MainTitle from '../MainTitle/MainTitle';
+import { ABOUT_PROJECT } from '../../../utils/constants';
+
+const {
+	aboutProjectMainTitle,
+	aboutProjectSubtitleLeft,
+	aboutProjectDescriptionLeft,
+	aboutProjectSubtitleRight,
+	aboutProjectDescriptionRight,
+	aboutProjectWeeksTitleLeft,
+	aboutProjectWeeksSubtitleLeft,
+	aboutPojectWeeksTitleRight,
+	aboutProjectWeeksSubtitleRight
+} = ABOUT_PROJECT;
 
 export default function AboutProject() {
 	return (
 		<section id='about-project' className='about-project main-content'>
-			<MainTitle>О проекте</MainTitle>
+			<MainTitle>{aboutProjectMainTitle}</MainTitle>
 			<ul className='about-project__list'>
 				<li>
-					<p className='about-project__subtitle'>Дипломный проект включал 5 этапов</p>
-					<p className='about-project__description'>Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
+					<p className='about-project__subtitle'>{aboutProjectSubtitleLeft}</p>
+					<p className='about-project__description'>{aboutProjectDescriptionLeft}</p>
 				</li>
 				<li>
-					<p className='about-project__subtitle'>На выполнение диплома ушло 5 недель</p>
-					<p className='about-project__description'>У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
+					<p className='about-project__subtitle'>{aboutProjectSubtitleRight}</p>
+					<p className='about-project__description'>{aboutProjectDescriptionRight}</p>
 				</li>
 			</ul>
 			<div className='about-project__weeks'>
 				<div className='about-project__weeks-container'>
-					<p className='about-project__weeks-title'>1 неделя</p>
-					<p className='about-project__weeks-subtitle'>Back-end</p>
+					<p className='about-project__weeks-title'>{aboutProjectWeeksTitleLeft}</p>
+					<p className='about-project__weeks-subtitle'>{aboutProjectWeeksSubtitleLeft}</p>
 				</div>
 				<div className='about-project__weeks-container'>
-					<p className='about-project__weeks-title'>4 недели</p>
-					<p className='about-project__weeks-subtitle'>Front-end</p>
+					<p className='about-project__weeks-title'>{aboutPojectWeeksTitleRight}</p>
+					<p className='about-project__weeks-subtitle'>{aboutProjectWeeksSubtitleRight}</p>
 				</div>
 			</div>
 		</section>
