@@ -7,5 +7,5 @@ URL: [https://shadxmikez.nomoredomainsmonster.ru](https://shadxmikez.nomoredomai
 
 ### По макету Dark-3
 
-### level-3 Pull (https://github.com/shadxmikez/movies-explorer-frontend/pull/2)
+### level-3 Pull [https://github.com/shadxmikez/movies-explorer-frontend/pull/2]
 
