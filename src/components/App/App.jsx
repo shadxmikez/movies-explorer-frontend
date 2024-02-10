@@ -100,7 +100,7 @@ const App = () => {
 		setIsLoggedIn(true);
 	}, []);
 
-	// инфа о текущем пользователи, апдейт
+	// логика изминения isLoggedIn
 	React.useEffect(() => {
 		const savedLoggedIn = getValueFromLocalStorage();
 		if (!savedLoggedIn) {
