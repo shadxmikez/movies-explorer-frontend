@@ -1,4 +1,4 @@
-import { WORK_DEV_LOCALHOST } from './constants';
+import { /*WORK_DEV_LOCALHOST*/ MY_API_URL } from './constants';
 
 class MainApi {
 	constructor(options) {
@@ -89,6 +89,6 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-	baseUrl: WORK_DEV_LOCALHOST,
+	baseUrl: MY_API_URL,
 });
 export default mainApi;

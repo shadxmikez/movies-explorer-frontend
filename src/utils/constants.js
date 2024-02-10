@@ -37,6 +37,7 @@ export const VALIDATE_EMAIL = 'Некорректный E-mail';
 
 export const API_URL_MOVIES = 'https://api.nomoreparties.co';
 export const WORK_DEV_LOCALHOST = 'http://localhost:3000';
+export const MY_API_URL = 'https://api.shadxmikez.nomoredomainsmonster.ru';
 
 export const ERROR_SHOW_MOVIES = 'Ошибка, попробуйте позже';
 export const FOUND_NOTHING_MOVIES = 'Ничего не найдено';
