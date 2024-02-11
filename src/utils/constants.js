@@ -140,6 +140,19 @@ export const FOOTER = {
 	footerLinkGithub: 'Github',
 }
 
+export const SCREEN_RESOLUTION = {
+	desktopResolution: 1175,
+	tabletResolution: 768,
+	mobileResolution: 480,
+}
+
+export const NUMBER_OF_FILMS_SHOWN = {
+	showDesktopCards: 12,
+	showTabletCards: 8,
+	showMobileCards: 5,
+	handleShowMoreDesktop: 3,
+	hadleShowMoreTablet: 2,
+}
 
 
 

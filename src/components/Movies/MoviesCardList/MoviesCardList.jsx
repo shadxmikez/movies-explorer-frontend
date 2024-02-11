@@ -12,10 +12,20 @@ import {
 	HANDLE_BUTTON_SHOW_MORE,
 	SAVEDMOVIES_CONSTANTS,
 	MOVIES_CONSTANTS,
-	ROUTES
+	ROUTES,
+	SCREEN_RESOLUTION,
+	NUMBER_OF_FILMS_SHOWN
 } from '../../../utils/constants';
 
 const { savedMoviesPathname, moviesPathname } = ROUTES;
+const { desktopResolution, tabletResolution, mobileResolution } = SCREEN_RESOLUTION;
+const {
+	showDesktopCards,
+	showTabletCards,
+	showMobileCards,
+	handleShowMoreDesktop,
+	hadleShowMoreTablet
+} = NUMBER_OF_FILMS_SHOWN;
 
 function MoviesCardList({
 	name,
@@ -47,17 +57,17 @@ function MoviesCardList({
 	useEffect(() => {
 		const showCards = () => {
 			const windowsScreenWidth = window.innerWidth;
-			if (windowsScreenWidth >= 1175) { // 1175 разширение
-				setShowMovies(12); // сколько показывать фильмов
+			if (windowsScreenWidth >= desktopResolution) { // 1175 разширение
+				setShowMovies(showDesktopCards); // сколько показывать фильмов
 			}
-			else if (windowsScreenWidth >= 768) {
-				setShowMovies(8);
+			else if (windowsScreenWidth >= tabletResolution) {
+				setShowMovies(showTabletCards);
 			}
-			else if (windowsScreenWidth >= 480) {
-				setShowMovies(5);
+			else if (windowsScreenWidth >= mobileResolution) {
+				setShowMovies(showMobileCards);
 			}
 			else {
-				setShowMovies(5);
+				setShowMovies(showMobileCards);
 			}
 		};
 		showCards();
@@ -69,15 +79,15 @@ function MoviesCardList({
 
 	const handleButtonShowMore = () => {
 		const windowsScreenWidth = window.innerWidth;
-		if (windowsScreenWidth >= 1175) {
-			setShowMovies(showMovies + 3); // при нажатие на кнопку, показывает +3 фильма
-		} else if (windowsScreenWidth >= 768) {
-			setShowMovies(showMovies + 2);
-		} else if (windowsScreenWidth >= 480) {
-			setShowMovies(showMovies + 2);
+		if (windowsScreenWidth >= desktopResolution) {
+			setShowMovies(showMovies + handleShowMoreDesktop); // при нажатие на кнопку, показывает +3 фильма
+		} else if (windowsScreenWidth >= tabletResolution) {
+			setShowMovies(showMovies + hadleShowMoreTablet);
+		} else if (windowsScreenWidth >= mobileResolution) {
+			setShowMovies(showMovies + hadleShowMoreTablet);
 		}
 		else {
-			setShowMovies(showMovies + 2);
+			setShowMovies(showMovies + hadleShowMoreTablet);
 		}
 	};
 

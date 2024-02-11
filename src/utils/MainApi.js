@@ -1,4 +1,4 @@
-import { /*WORK_DEV_LOCALHOST*/ MY_API_URL } from './constants';
+import { /*WORK_DEV_LOCALHOST,*/ MY_API_URL } from './constants';
 
 class MainApi {
 	constructor(options) {

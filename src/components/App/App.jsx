@@ -4,7 +4,8 @@ import {
 	Route,
 	Routes,
 	useNavigate,
-	useLocation
+	useLocation,
+	Navigate,
 } from 'react-router-dom';
 
 import Header from '../Header/Header';
@@ -61,7 +62,7 @@ const App = () => {
 	const showPathHeader = (data) => data.includes(pathname);
 	const showPathFooter = (data) => data.includes(pathname);
 
-	const [currentUser, setCurrentUser] = React.useState({});
+	const [currentUser, setCurrentUser] = React.useState({ isLoggedIn: localStorage.getItem(ISLOGGEDIN_CONSTANTS) });
 	const [isLoggedIn, setIsLoggedIn] = React.useState(false);
 	const [isNavBarOpen, setIsNavBarOpen] = React.useState(false);
 	const [profileMessage, setProfileMessage] = React.useState({});
@@ -259,15 +260,23 @@ const App = () => {
 		onDeleteMovie={removeMovie}
 	/>
 
-	const signinComponent = <Login
-		isLoading={isLoading}
-		onLogin={onLogin}
-	/>
+	const signinComponent = currentUser.isLoggedIn ? (
+		<Navigate to={homePathname} replace />
+	) : (
+		<Login
+			isLoading={isLoading}
+			onLogin={onLogin}
+		/>
+	)
 
-	const signupComponent = <Register
-		isLoading={isLoading}
-		onRegister={onRegister}
-	/>
+	const signupComponent = currentUser.isLoggedIn ? (
+		<Navigate to={homePathname} replace />
+	) : (
+		<Register
+			isLoading={isLoading}
+			onRegister={onRegister}
+		/>
+	)
 
 	const pageNotFoundComponent = <PageNotFound />
 
