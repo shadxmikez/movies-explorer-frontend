@@ -1,0 +1,147 @@
+.profile {
+	display: grid;
+	grid-template-columns: 410px;
+	padding: 74px 0 70px;
+	color: var(--color-white);
+}
+
+.profile__title {
+	text-align: center;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	padding-bottom: 123px;
+	margin: 0;
+}
+
+.profile__container {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.profile__label {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 17px;
+	padding-bottom: 16px;
+}
+
+.profile__label:first-child {
+	border-bottom: 1px solid var(--color-grey42);
+}
+
+.profile__label::after {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1px;
+	content: '';
+	background-color: transparent;
+}
+
+.profile__label:last-child {
+	margin-bottom: 50px;
+	padding: 0;
+}
+
+.profile__subtitle {
+	width: 65px;
+	font-size: 11px;
+	font-weight: 500;
+	font-style: normal;
+	margin: 0;
+}
+
+.profile__input {
+	color: var(--color-white);
+	width: 100%;
+	padding: 0;
+	text-align: end;
+	border: none;
+	outline: inherit;
+	background-color: var(--color-body);
+	font-size: 11px;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.profile__list {
+	list-style: none;
+	text-align: center;
+	margin: 0;
+	margin-top: 170px;
+	padding: 0;
+}
+
+.profile__link {
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	color: var(--color-white);
+	text-decoration: none;
+}
+
+.profile__link:hover {
+	opacity: var(--opacity-links);
+	transition: var(--opacity-smoothness);
+}
+
+.profile__link-logout {
+	color: var(--color-redbutton);
+	margin-top: 16px;
+	display: inline-block;
+}
+
+
+.profile__error {
+	color: var(--color-redbutton);
+	font-size: 10px;
+	font-weight: 500;
+	font-style: normal;
+	padding-top: 10px;
+	display: block;
+	padding-bottom: 10px;
+	margin-top: -20px;
+}
+
+.profile__error:last-of-type {
+	margin-top: -20px;
+}
+
+@media (max-width: 768px) {
+	.profile {
+		padding: 231px 0 269px;
+	}
+
+	.profile__title {
+		padding-bottom: 97px;
+	}
+
+	.profile__list {
+		margin-top: 160px;
+	}
+}
+
+@media (max-width:550px) {
+	.profile {
+		padding: 65px 0 40px;
+		grid-template-columns: 260px;
+	}
+
+	.profile__link {
+		font-size: 12px;
+	}
+
+	.profile__title {
+		padding-bottom: 81px;
+	}
+
+	.profile__list {
+		margin-top: 328px;
+	}
+}
