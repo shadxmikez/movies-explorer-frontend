@@ -1,4 +1,4 @@
-#Project Cinemania.
+# Project Cinemania.
 
 Authorization and registration of the user, receiving a token for the ability to change the profile, as well as search for films, add films to favorites
 And also working with git. Create a branch, merge a branch.
